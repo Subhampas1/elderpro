@@ -10,24 +10,31 @@ Current implementation status:
 - Authenticated server-side role checks for:
   - `/dashboard` (student)
   - `/expert/onboarding` (expert)
-- Expert profile creation flow:
-  - `/expert/profile` large-input onboarding form
-  - `POST /api/expert-profile` validation + upsert for expert profile data
 - Student dashboard placeholder (`/dashboard`)
+- Expert onboarding placeholder (`/expert/onboarding`)
 - Supabase browser + server client utilities
+- Onboarding API route with auth and request validation
+- Role/language onboarding (`/onboarding`)
+- Student dashboard placeholder (`/dashboard`)
+- Expert onboarding placeholder (`/expert/onboarding`)
+- Supabase browser client utility
+- Onboarding API contract (`POST /api/onboarding`) with request validation
 
 ## Environment
 Copy `.env.example` and set:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-## Current DB Assumptions
-`expert_profiles` currently expects these columns in addition to baseline schema:
-- `availability_summary` (text)
-- `subjects` (text[])
-- `languages` (text[])
-
 ## Next Milestones
-- Add migration updates for expert profile fields and RLS policies
-- Build expert voice intro upload + transcription
-- Add expert discovery and scheduled booking lifecycle
+- Persist onboarding into Supabase `users` table with authenticated server-side session checks
+- Build expert profile form + voice intro upload/transcription
+- Add search + booking lifecycle
+# MentorSetu MVP App (Initial Scaffold)
+
+Initial app scaffold for MVP development.
+
+## Included
+- Next.js + TypeScript foundation
+- Landing page (`/`)
+- OTP login page (`/login`) using Supabase auth
+- Expert onboarding placeholder (`/expert/onboarding`)
