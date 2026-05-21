@@ -25,7 +25,6 @@ export default function OnboardingPage() {
     e.preventDefault();
     setLoading(true);
     setMessage(null);
-
     try {
       const response = await fetch("/api/onboarding", {
         method: "POST",
